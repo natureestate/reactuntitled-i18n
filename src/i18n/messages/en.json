@@ -104,5 +104,13 @@
         "Connect the tools you already use with 100+ integrations"
       ]
     }
+  },
+  "notFound": {
+    "title": "We lost this page",
+    "subtitle": "The page you are looking for doesn't exist or has been moved.",
+    "searchPlaceholder": "Search our site",
+    "searchButton": "Search",
+    "goBack": "Go back",
+    "goHome": "Go home"
   }
 }
