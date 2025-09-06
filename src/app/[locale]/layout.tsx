@@ -31,6 +31,16 @@ export const viewport: Viewport = {
 };
 
 /**
+ * Generate static params สำหรับ static export
+ */
+export function generateStaticParams() {
+    return [
+        { locale: 'th' },
+        { locale: 'en' }
+    ];
+}
+
+/**
  * Root Layout Component with i18n support
  * รองรับหลายภาษาและใช้ IBM Plex Sans Thai font
  */

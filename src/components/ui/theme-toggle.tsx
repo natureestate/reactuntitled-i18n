@@ -25,7 +25,7 @@ export const ThemeToggle = () => {
     if (!mounted) {
         return (
             <Button
-                variant="ghost"
+                color="secondary"
                 size="sm"
                 className="h-9 w-9 px-0"
                 disabled
@@ -42,7 +42,7 @@ export const ThemeToggle = () => {
 
     return (
         <Button
-            variant="ghost"
+            color="secondary"
             size="sm"
             onClick={toggleTheme}
             className="h-9 w-9 px-0"

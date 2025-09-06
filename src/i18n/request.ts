@@ -6,7 +6,7 @@ import { getRequestConfig } from 'next-intl/server';
  */
 export default getRequestConfig(async ({ locale }) => {
     // ตรวจสอบว่า locale ถูกต้อง ถ้าไม่ใช่ให้ใช้ 'th' เป็น default (เปลี่ยนตาม middleware)
-    const validLocale = ['en', 'th'].includes(locale) ? locale : 'th';
+    const validLocale = ['en', 'th'].includes(locale as string) ? (locale as string) : 'th';
     
     return {
         locale: validLocale,
