@@ -77,7 +77,7 @@ export default function NotFound() {
                                 icon={SearchLg}
                                 placeholder={messages.searchPlaceholder}
                                 value={searchQuery}
-                                onChange={setSearchQuery}
+                                onChange={(e) => setSearchQuery(e)}
                                 size="md"
                             />
                         </div>
