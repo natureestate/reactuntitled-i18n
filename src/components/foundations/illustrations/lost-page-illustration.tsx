@@ -46,7 +46,7 @@ export const LostPageIllustration: React.FC<LostPageIllustrationProps> = ({
       
       {/* Search magnifying glass */}
       <circle cx="60" cy="170" r="8" fill="none" stroke="#6B7280" strokeWidth="2"/>
-      <path d="M66 176l4 4" stroke="#6B7280" strokeWidth="2" strokeLinecap="round"/>
+      <path d="m66 176 4 4" stroke="#6B7280" strokeWidth="2" strokeLinecap="round"/>
     </svg>
   );
 };

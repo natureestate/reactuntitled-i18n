@@ -2,10 +2,10 @@
 
 import React, { useState } from 'react';
 import { useRouter, usePathname } from "next/navigation";
+import { ArrowLeft, SearchLg } from "@untitledui/icons";
 import { Button } from "@/components/base/buttons/button";
+import { Input } from "@/components/base/input/input";
 import { LostPageIllustration } from "@/components/foundations/illustrations/lost-page-illustration";
-import { SearchIcon } from "@/components/foundations/icons/search-icon";
-import { ArrowLeftIcon } from "@/components/foundations/icons/arrow-left-icon";
 
 // Default messages เมื่อไม่มี i18n context
 const defaultMessages = {
@@ -53,57 +53,57 @@ export default function NotFound() {
 
     return (
         <div className="min-h-screen bg-white flex items-center justify-center px-4 py-16">
-            <div className="max-w-md w-full text-center">
+            <div className="w-full max-w-md mx-auto text-center">
                 {/* Illustration */}
-                <div className="mb-12 flex justify-center">
-                    <LostPageIllustration width={240} height={240} />
+                <div className="mb-8 flex justify-center">
+                    <LostPageIllustration width={200} height={200} />
                 </div>
 
                 {/* Title and Description */}
-                <div className="mb-8">
-                    <h1 className="text-3xl font-semibold text-gray-900 mb-4">
+                <div className="mb-8 space-y-3">
+                    <h1 className="text-display-sm font-semibold text-gray-900 md:text-display-md">
                         {messages.title}
                     </h1>
-                    <p className="text-base text-gray-600">
+                    <p className="text-md text-gray-600">
                         {messages.subtitle}
                     </p>
                 </div>
 
                 {/* Search Box */}
-                <form onSubmit={handleSearch} className="mb-8">
-                    <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <SearchIcon className="text-gray-400" size={20} />
+                <div className="mb-8">
+                    <form onSubmit={handleSearch} className="flex gap-3">
+                        <div className="flex-1">
+                            <Input
+                                icon={SearchLg}
+                                placeholder={messages.searchPlaceholder}
+                                value={searchQuery}
+                                onChange={setSearchQuery}
+                                size="md"
+                            />
                         </div>
-                        <input
-                            type="text"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            placeholder={messages.searchPlaceholder}
-                            className="w-full pl-10 pr-20 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        />
-                        <button
+                        <Button 
                             type="submit"
-                            className="absolute inset-y-0 right-0 flex items-center px-4 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors duration-200"
+                            size="md"
+                            className="px-4"
                         >
                             {messages.searchButton}
-                        </button>
-                    </div>
-                </form>
+                        </Button>
+                    </form>
+                </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                     <Button 
+                        size="md"
                         color="secondary" 
+                        iconLeading={ArrowLeft}
                         onClick={handleGoBack}
-                        className="flex items-center gap-2 px-6 py-3"
                     >
-                        <ArrowLeftIcon size={16} />
                         {messages.goBack}
                     </Button>
                     <Button 
+                        size="md"
                         onClick={handleGoHome}
-                        className="px-6 py-3"
                     >
                         {messages.goHome}
                     </Button>
