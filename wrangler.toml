@@ -1,22 +1,17 @@
-# wrangler.toml config สำหรับ website-ui Worker
+# Wrangler configuration สำหรับ OpenNext Cloudflare adapter
+main = ".open-next/worker.js"
 name = "website-ui"
-main = "src/worker.js"
-compatibility_date = "2024-10-04"
+compatibility_date = "2025-01-04"
 compatibility_flags = ["nodejs_compat"]
 
 # Account ID จาก Cloudflare dashboard
 account_id = "888725e55ac1543637e22d1c490c5d9c"
 
-# Workers configuration
-[env.production]
-name = "website-ui"
-
-# Assets configuration สำหรับ static files
-[env.production.assets]
+# Static Assets configuration
+[assets]
+directory = ".open-next/assets"
 binding = "ASSETS"
 
-# KV bindings (ถ้าต้องการเก็บข้อมูล)
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "your-kv-namespace-id"
-# preview_id = "your-preview-kv-namespace-id"
+# Environment สำหรับ production
+[env.production]
+name = "website-ui"

@@ -9,15 +9,11 @@ const nextConfig = {
     optimizePackageImports: ['@untitledui/icons']
   },
   
-  // กำหนดค่าสำหรับ static export (สำหรับ Workers)
-  output: 'export',
-  trailingSlash: true,
+  // กำหนดค่าสำหรับ OpenNext Cloudflare
+  output: 'standalone',
   images: {
     unoptimized: true
-  },
-  
-  // กำหนด base path สำหรับ static files
-  // assetPrefix: process.env.NODE_ENV === 'production' ? './' : ''
+  }
 };
 
 export default withNextIntl(nextConfig);

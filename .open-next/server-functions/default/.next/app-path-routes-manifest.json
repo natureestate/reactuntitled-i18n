@@ -1,0 +1,7 @@
+{
+  "/icon.png/route": "/icon.png",
+  "/page": "/",
+  "/_not-found/page": "/_not-found",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/landingpage/page": "/[locale]/landingpage"
+}
